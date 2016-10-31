@@ -1,0 +1,17 @@
+<div class="clearfix">
+  <form ng-Submit="post()" ng-show="authenticated">
+    <h4>{{current_user}} says</h4>
+    <textarea required class="form-control" maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+    <input class="btn submit-btn pull-right" type="submit" value="Post!" />
+  </form>
+</div>
+<div id="post-stream">
+	<h4>Feed</h4>
+		<div class="post card" ng-repeat="post in posts | orderBy:'created_at':true">
+			<p>{{post.text}}</p>
+      <hr>
+			<small>Posted by @{{post.created_by}} </small>
+			<small class="pull-right"><i class="fa fa-trash" aria-hidden="true"></i> {{post.created_at | date:"h:mma 'on' MMM d, y"}} </small>
+		</div>
+
+</div>

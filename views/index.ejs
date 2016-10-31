@@ -1,0 +1,50 @@
+<html>
+
+<head>
+	<title>Feed</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+	<script src="javascripts/TApp.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body ng-app="TApp">
+	<div id='main' class="container">
+
+		<nav class="navbar-fluid navbar-default navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="#"><i class="fa fa-twitter"></i> Tclone! </a>
+				<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/login">Login</a> or <a href="#/register">Register</a></p>
+				<p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Logout</a></p>
+				<p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>
+			</div>
+		</nav>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="container">
+			<div class="col s8 offset-s2">
+				<div ng-view>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="javascripts/script.js"> </script>
+	</body>
+
+</html>
